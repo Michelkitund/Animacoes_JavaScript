@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /*Resetando* a bagina */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    /*falando com o  body*/
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #222327;
+    }
+
+    /*falando com a div navigation*/
+    .navegacao {
+      position: absolute;
+      width: 400px;
+      height: 60px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+    }
+
+    /* falando com a (ul) dentro da div>navegacao */
+    .navegacao ul {
+      display: flex;
+      width: 350px;
+    }
+
+    /*f com a (li) */
+    .navegacao ul li {
+      list-style: none;
+      position: relative;
+      /* 350 /5 = 70 */
+      width: 70px;
+      height: 60px;
+      z-index: 2;
+    }
+
+    /*f com a (a) */
+    .navegacao ul li a {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /*f com a (.icon) */
+    .navegacao ul li a .icon {
+      position: relative;
+      display: block;
+      line-height: 65px;
+      font-size: 1.5rem;
+      transition: 0.5s;
+      color: #222327;
+    }
+
+    .navegacao ul li.active a .icon {
+      transform: translateY(-32px);
+      color: #2196f3;
+    }
+
+    .navegacao ul li a .text {
+      position: absolute;
+      background: #2196f3;
+      color: #fff;
+      padding: 2px 7px;
+      border-radius: 12px;
+      font-weight: 400;
+      font-size: 0.75em;
+      letter-spacing: 0.05em;
+      transition: 0.5s;
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    .navegacao ul li.active a .text {
+      transform: translateY(-4px);
+      opacity: 1;
+    }
+
+    .indicador {
+      top: -35%;
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      background: #fff;
+      border-radius: 50%;
+      z-index: 1;
+      transition: 0.5s;
+    }
+
+    .indicador::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: -28px;
+      width: 30px;
+      height: 30px;
+      background: transparent;
+      border-radius: 50%;
+      box-shadow: 15px 18px #fff;
+    }
+
+    .indicador::after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      right: -28px;
+      width: 30px;
+      height: 30px;
+      background: transparent;
+      border-radius: 50%;
+      box-shadow: -15px 18px #fff;
+    }
+
+    .navigation ul li:nth-child(1).active~.indicador {
+      transform: translateX(calc(70px * 0));
+    }
+
+    .navegacao ul li:nth-child(2).active~.indicador {
+      transform: translateX(calc(70px * 1));
+    }
+
+    .navegacao ul li:nth-child(3).active~.indicador {
+      transform: translateX(calc(70px * 2));
+    }
+
+    .navegacao ul li:nth-child(4).active~.indicador {
+      transform: translateX(calc(70px * 3));
+    }
+
+    .navegacao ul li:nth-child(5).active~.indicador {
+      transform: translateX(calc(70px * 4));
+    }
+  </style>
+
+  <title>Magic Menu Indicador</title>
+</head>
+
+<body>
+  <div class="navegacao">
+    <ul>
+      <li class="list active">
+        <a href="#">
+          <span class="icon">
+            <ion-icon name="home-outline"></ion-icon>
+          </span>
+          <span class="text">Home</span>
+        </a>
+      </li>
+
+      <li class="list ">
+        <a href="#">
+          <span class="icon">
+            <ion-icon name="person-outline"></ion-icon>
+          </span>
+          <span class="text">Profile</span>
+        </a>
+      </li>
+
+      <li class="list">
+        <a href="#">
+          <span class="icon">
+            <ion-icon name="chatbubble-outline"></ion-icon>
+          </span>
+          <span class="text">Messages</span>
+        </a>
+      </li>
+
+      <li class="list">
+        <a href="#">
+          <span class="icon">
+            <ion-icon name="camera-outline"></ion-icon>
+          </span>
+          <span class="text">Photo</span>
+        </a>
+      </li>
+
+      <li class="list">
+        <a href="#">
+          <span class="icon">
+            <ion-icon name="settings-outline"></ion-icon>
+          </span>
+          <span class="text">Settings</span>
+        </a>
+      </li>
+      <div class="indicador"></div>
+    </ul>
+  </div>
+
+  <script>
+    const list = document.querySelectorAll('.list');
+    function activeLink() {
+      list.forEach((item) =>
+        item.classList.remove('active'));
+      this.classList.add('active')
+    }
+    list.forEach((item) =>
+      item.addEventListener('click', activeLink));
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> </script>
+  <script nomodule src="https: // unpkg .com / ionicons @ 5.5.2 / dist / ionicons / ionicons.js "> </script>
+
+
+</body>
+
+</html>
