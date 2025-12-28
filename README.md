@@ -3,6 +3,11 @@
 <div align="center">
    <img src="https://raw.githubusercontent.com/iampavangandhi/iampavangandhi/master/gifs/Hi.gif" width="30px"> 
    <h2 >Olá, Animação_Css_JavaScript!</h2>
+   <h3>JS Pequenos Passos: Laboratório de Animações</h3>
+</div>
+
+<div align="center">
+      <p>Este diretório reúne uma coleção de mini-projetos focados em explorar o poder do JavaScript para criar interatividade e movimento na web. O objetivo principal é consolidar conceitos de manipulação de DOM, lógica de programação e técnicas de animação.</p>
 </div>
 
 ### Animações  css / JavaScript 🤓
