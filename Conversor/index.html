@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor Simples</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h3>Conversor de Medidas</h3>
+
+        <div class="bloco">
+            <label>KM:</label>
+            <input type="number" id="km" oninput="converterKm()">
+            <p>Milhas: <span id="resMilha">0</span></p>
+        </div>
+
+        <hr>
+
+        <div class="bloco">
+            <label>Celsius:</label>
+            <input type="number" id="celsius" oninput="converterTemp()">
+            <p>Fahrenheit: <span id="resFar">0</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
